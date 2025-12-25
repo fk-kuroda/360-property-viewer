@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° 物件ビュワー | 物件一覧</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .property-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .property-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+        .property-info {
+            padding: 25px;
+        }
+        .property-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        .property-details {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .property-detail-item {
+            margin-bottom: 5px;
+        }
+        .view-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .view-button:hover {
+            background: #5568d3;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #10b981;
+            color: white;
+            font-size: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .status-badge.coming-soon {
+            background: #f59e0b;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏢 360° 物件ビュワー</h1>
+            <p class="subtitle">スマートフォンで見学できるバーチャル内覧</p>
+        </header>
+
+        <div class="property-grid">
+            <!-- 物件カード1 -->
+            <a href="./akasaka-building/" class="property-card">
+                <div class="property-image">🏙️</div>
+                <div class="property-info">
+                    <span class="status-badge">公開中</span>
+                    <h2 class="property-name">赤坂ビル 5階</h2>
+                    <div class="property-details">
+                        <div class="property-detail-item">📍 東京都港区赤坂</div>
+                        <div class="property-detail-item">📐 50坪</div>
+                        <div class="property-detail-item">💰 賃料: 100万円/月</div>
+                    </div>
+                    <div class="view-button">360°で見学する →</div>
+                </div>
+            </a>
+
+            <!-- 物件カード2 -->
+            <a href="./shibuya-office/" class="property-card">
+                <div class="property-image">🌆</div>
+                <div class="property-info">
+                    <span class="status-badge">公開中</span>
+                    <h2 class="property-name">渋谷オフィス 3階</h2>
+                    <div class="property-details">
+                        <div class="property-detail-item">📍 東京都渋谷区渋谷</div>
+                        <div class="property-detail-item">📐 35坪</div>
+                        <div class="property-detail-item">💰 賃料: 70万円/月</div>
+                    </div>
+                    <div class="view-button">360°で見学する →</div>
+                </div>
+            </a>
+
+            <!-- 物件カード3 -->
+            <a href="./roppongi-tower/" class="property-card">
+                <div class="property-image">🏢</div>
+                <div class="property-info">
+                    <span class="status-badge">公開中</span>
+                    <h2 class="property-name">六本木タワー 12階</h2>
+                    <div class="property-details">
+                        <div class="property-detail-item">📍 東京都港区六本木</div>
+                        <div class="property-detail-item">📐 80坪</div>
+                        <div class="property-detail-item">💰 賃料: 150万円/月</div>
+                    </div>
+                    <div class="view-button">360°で見学する →</div>
+                </div>
+            </a>
+
+            <!-- 準備中の物件例 -->
+            <a href="#" class="property-card" style="opacity: 0.7; pointer-events: none;">
+                <div class="property-image">🔧</div>
+                <div class="property-info">
+                    <span class="status-badge coming-soon">準備中</span>
+                    <h2 class="property-name">新宿オフィス 8階</h2>
+                    <div class="property-details">
+                        <div class="property-detail-item">📍 東京都新宿区新宿</div>
+                        <div class="property-detail-item">📐 60坪</div>
+                        <div class="property-detail-item">💰 賃料: 110万円/月</div>
+                    </div>
+                    <div class="view-button">近日公開</div>
+                </div>
+            </a>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 360° 物件ビュワー | Powered by GitHub Pages</p>
+            <p style="margin-top: 10px; font-size: 14px;">
+                QRコードからスマートフォンでアクセスしてください
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
